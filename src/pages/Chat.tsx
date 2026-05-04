@@ -70,7 +70,7 @@
 // //         api_key:"xe5B4Gl3sXTaPZDU2rkD25HD9SRizyIy"
 // //       };
 
-// //       const res = await fetch("http://localhost:8000/analyze", {
+// //       const res = await fetch("https://nyaya-backend-muktha.onrender.com/analyze", {
 // //         method: "POST",
 // //         headers: {
 // //           "Content-Type": "application/json",
@@ -339,8 +339,8 @@
 // // // ─── Config ───────────────────────────────────────────────────────────────────
 // // // API is served from the same origin as the frontend (FastAPI serves both).
 // // // If you run the dev server separately (e.g. Vite on :5173), set:
-// // //   VITE_API_URL=http://localhost:8000
-// // const API_BASE = "http://localhost:8000"
+// // //   VITE_API_URL=https://nyaya-backend-muktha.onrender.com
+// // const API_BASE = "https://nyaya-backend-muktha.onrender.com"
 
 // // const VALID_JURISDICTIONS = [
 // //   "India", "United States", "United Kingdom",
@@ -825,7 +825,7 @@
 // }
 
 // // ─── Config ───────────────────────────────────────────────────────────────────
-// const API_BASE = "http://localhost:8000"
+// const API_BASE = "https://nyaya-backend-muktha.onrender.com"
 
 // const VALID_JURISDICTIONS = [
 //   "India", "United States", "United Kingdom",
@@ -1503,7 +1503,7 @@ interface ChatSession {
 }
 
 // ─── Config ───────────────────────────────────────────────────────────────────
-const API_BASE = "http://localhost:8000"
+const API_BASE = "https://nyaya-backend-muktha.onrender.com"
 
 const VALID_JURISDICTIONS = [
   "India", "United States", "United Kingdom",

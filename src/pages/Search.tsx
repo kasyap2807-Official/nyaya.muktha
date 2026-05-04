@@ -4,7 +4,7 @@ import { Layout } from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
-const API_BASE = "http://localhost:8000";
+const API_BASE = "https://nyaya-backend-muktha.onrender.com";
 
 interface BlogPost {
   _id: string;

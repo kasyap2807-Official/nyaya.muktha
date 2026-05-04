@@ -91,7 +91,7 @@ const AdminBlogs = () => {
 
   const handleLogin = async () => {
     try {
-      const res = await fetch("http://localhost:8000/app3/login", {
+      const res = await fetch("https://nyaya-backend-muktha.onrender.com/app3/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username: loginUsername, password: loginPassword })
@@ -122,7 +122,7 @@ const AdminBlogs = () => {
   const fetchBlogs = async (authToken: string) => {
     setLoading(true);
     try {
-      const res = await fetch(`http://localhost:8000/app3/blogs?page=${page}&limit=20`, {
+      const res = await fetch(`https://nyaya-backend-muktha.onrender.com/app3/blogs?page=${page}&limit=20`, {
         headers: { "Authorization": `Bearer ${authToken}` }
       });
       const data = await res.json();
@@ -138,7 +138,7 @@ const AdminBlogs = () => {
   const createBlog = async () => {
     setSaving(true);
     try {
-      const res = await fetch("http://localhost:8000/app3/blogs", {
+      const res = await fetch("https://nyaya-backend-muktha.onrender.com/app3/blogs", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -167,7 +167,7 @@ const AdminBlogs = () => {
     setSaving(true);
     
     try {
-      const res = await fetch(`http://localhost:8000/app3/blogs/${selectedBlog._id}`, {
+      const res = await fetch(`https://nyaya-backend-muktha.onrender.com/app3/blogs/${selectedBlog._id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -196,7 +196,7 @@ const AdminBlogs = () => {
     if (!confirm("Are you sure you want to delete this blog?")) return;
     
     try {
-      const res = await fetch(`http://localhost:8000/app3/blogs/${blogId}`, {
+      const res = await fetch(`https://nyaya-backend-muktha.onrender.com/app3/blogs/${blogId}`, {
         method: "DELETE",
         headers: { "Authorization": `Bearer ${token}` }
       });
@@ -213,7 +213,7 @@ const AdminBlogs = () => {
 
   const togglePublish = async (blogId: string, currentStatus: boolean) => {
     try {
-      const res = await fetch(`http://localhost:8000/app3/blogs/${blogId}/publish`, {
+      const res = await fetch(`https://nyaya-backend-muktha.onrender.com/app3/blogs/${blogId}/publish`, {
         method: "POST",
         headers: { "Authorization": `Bearer ${token}` }
       });
