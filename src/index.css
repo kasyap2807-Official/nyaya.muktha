@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Core palette — Indian legal aesthetic */
+    --background: 38 40% 97%;          /* warm cream */
+    --foreground: 220 50% 14%;         /* deep navy ink */
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 50% 14%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 50% 14%;
+
+    --primary: 220 60% 18%;            /* navy blue */
+    --primary-foreground: 38 40% 97%;
+    --primary-glow: 220 70% 32%;
+
+    --secondary: 38 35% 92%;           /* parchment */
+    --secondary-foreground: 220 50% 14%;
+
+    --muted: 38 25% 94%;
+    --muted-foreground: 220 15% 40%;
+
+    --accent: 24 95% 55%;              /* saffron */
+    --accent-foreground: 0 0% 100%;
+    --accent-soft: 30 90% 95%;
+
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 38 25% 88%;
+    --input: 38 25% 90%;
+    --ring: 24 95% 55%;
+
+    --radius: 1rem;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(220 60% 18%) 0%, hsl(220 70% 28%) 60%, hsl(24 80% 45%) 130%);
+    --gradient-soft: linear-gradient(180deg, hsl(38 40% 97%) 0%, hsl(30 50% 94%) 100%);
+    --gradient-saffron: linear-gradient(135deg, hsl(24 95% 55%), hsl(36 95% 60%));
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(38 35% 97%) 100%);
+
+    /* Shadows */
+    --shadow-soft: 0 2px 10px -2px hsl(220 50% 14% / 0.06), 0 1px 3px hsl(220 50% 14% / 0.04);
+    --shadow-elegant: 0 20px 50px -20px hsl(220 60% 18% / 0.18), 0 8px 16px -8px hsl(220 60% 18% / 0.08);
+    --shadow-glow: 0 10px 40px -10px hsl(24 95% 55% / 0.35);
+
+    /* Motion */
+    --transition-smooth: cubic-bezier(0.22, 1, 0.36, 1);
+
+    --sidebar-background: 38 40% 97%;
+    --sidebar-foreground: 220 50% 14%;
+    --sidebar-primary: 220 60% 18%;
+    --sidebar-primary-foreground: 38 40% 97%;
+    --sidebar-accent: 38 35% 92%;
+    --sidebar-accent-foreground: 220 50% 14%;
+    --sidebar-border: 38 25% 88%;
+    --sidebar-ring: 24 95% 55%;
+  }
+
+  .dark {
+    --background: 220 45% 8%;
+    --foreground: 38 40% 95%;
+    --card: 220 40% 11%;
+    --card-foreground: 38 40% 95%;
+    --popover: 220 40% 11%;
+    --popover-foreground: 38 40% 95%;
+    --primary: 38 40% 95%;
+    --primary-foreground: 220 60% 18%;
+    --primary-glow: 220 70% 50%;
+    --secondary: 220 30% 16%;
+    --secondary-foreground: 38 40% 95%;
+    --muted: 220 30% 16%;
+    --muted-foreground: 220 15% 65%;
+    --accent: 24 95% 60%;
+    --accent-foreground: 220 60% 10%;
+    --accent-soft: 24 50% 18%;
+    --border: 220 30% 18%;
+    --input: 220 30% 18%;
+    --ring: 24 95% 55%;
+  }
+}
+
+@layer base {
+  * { @apply border-border; }
+  html { scroll-behavior: smooth; }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-feature-settings: 'cv11', 'ss01';
+  }
+  h1, h2, h3, h4, .font-display {
+    font-family: 'Fraunces', Georgia, serif;
+    font-optical-sizing: auto;
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer utilities {
+  .bg-gradient-hero { background: var(--gradient-hero); }
+  .bg-gradient-soft { background: var(--gradient-soft); }
+  .bg-gradient-saffron { background: var(--gradient-saffron); }
+  .bg-gradient-card { background: var(--gradient-card); }
+  .shadow-soft { box-shadow: var(--shadow-soft); }
+  .shadow-elegant { box-shadow: var(--shadow-elegant); }
+  .shadow-glow { box-shadow: var(--shadow-glow); }
+  .transition-smooth { transition: all 0.4s var(--transition-smooth); }
+  .text-balance { text-wrap: balance; }
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes typing {
+  0%, 100% { opacity: 0.3; transform: translateY(0); }
+  50% { opacity: 1; transform: translateY(-3px); }
+}
+.animate-fade-up { animation: fade-up 0.6s var(--transition-smooth) both; }
+.animate-typing > span { animation: typing 1.2s ease-in-out infinite; display: inline-block; }
+.animate-typing > span:nth-child(2) { animation-delay: 0.15s; }
+.animate-typing > span:nth-child(3) { animation-delay: 0.3s; }
