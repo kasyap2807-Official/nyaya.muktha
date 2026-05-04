@@ -100,7 +100,7 @@ export const Header = () => {
       <header
         className={cn(
           "sticky top-0 z-40 w-full border-b border-border/60 backdrop-blur-xl",
-          onChat ? "bg-background" : "bg-background/80"
+    onChat ? "hidden md:block bg-background" : "bg-background/80"
         )}
       >
         <div className="container flex h-16 items-center justify-between">
